@@ -1,0 +1,51 @@
+* text=auto
+
+# source files
+*.rb           text eol=lf
+*.sh           text eol=lf
+*.bash         text eol=lf
+*.js           text eol=lf
+*.c            text eol=lf
+*.cpp          text eol=lf
+*.h            text eol=lf
+*.am           text eol=lf
+*.in           text eol=lf
+*.m4           text eol=lf
+*.m            text eol=lf
+*.sub          text eol=lf
+*.diff         text eol=lf
+*.patch        text eol=lf
+*.mak          text eol=lf
+*.txt          text eol=lf
+*.init         text eol=lf
+*.suppressions text eol=lf
+*.pl           text eol=lf
+*.py           text eol=lf
+*.xml          text eol=lf
+*.manifest     text eol=lf
+*.entitlements text eol=lf
+*.nsh          text eol=lf
+*.pbxproj      text eol=lf
+*.sym          text eol=lf
+*.S            text eol=lf
+*.hpp          text eol=lf
+*.ui           text eol=lf
+*.svg          text eol=lf
+*.xib          text eol=lf
+*.1            text eol=lf
+*.lircrc       text eol=lf
+*.idl          text eol=lf
+*.gmo          text eol=lf
+
+# binary files
+*.exe  binary
+*.msi  binary
+*.dll  binary
+*.o    binary
+*.apk  binary
+*.ipa  binary
+*.lib  binary
+*.dmg  binary
+*.tiff binary
+*.bmp  binary
+*.png  binary
