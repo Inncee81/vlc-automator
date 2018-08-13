@@ -1,4 +1,5 @@
 #! /bin/bash
+
 # Linux 
 linux_install(){
   export PROJ_DIR=`pwd`
@@ -23,11 +24,7 @@ linux_install(){
   sudo apt-get update
   sudo apt-get install zlib1g:i386 libstdc++6:i386 libc6:i386
 
-  if [ %1 -eq 'mobile' ]; then
-    ARCH='armeabi-v7a'
-  else
-    ARCH='x86'
-  fi
+  if [ "$1" -eq "native" ]; then ARCH='armeabi-v7a'; else ARCH='x86'; fi
 
   pushd vlc-android
   ./compile.sh
@@ -52,14 +49,12 @@ macos_install(){
   unzip sdk-tools-darwin.zip -d sdk/sdk-tools-darwin
   unzip android-ndk-r14b-darwin.zip -d ndk/android-ndk-r14b-darwin
 
-  if [ %1 -eq 'mobile' ]; then
-    ARCH='armeabi-v7a'
-  else
-    ARCH='x86'
-  fi
+  if [ "$1" -eq "native" ]; then ARCH='armeabi-v7a'; else ARCH='x86'; fi
 
   pushd vlc-android
   ./compile.sh
   ./compile.sh -a $ARCH
   popd
 }
+
+if [ "`uname`" -eq "Darwin" ] ; then macos_install; else linux_install; fi
