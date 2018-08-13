@@ -1,0 +1,6 @@
+[submodule "app/vlc-android"]
+	path = app/vlc-android
+	url = git@github.com:videolan/vlc-android.git
+[submodule "app/vlc-ios"]
+	path = app/vlc-ios
+	url = git@github.com:videolan/vlc-ios.git
