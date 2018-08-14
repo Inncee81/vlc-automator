@@ -1,3 +1,14 @@
+# Android and iOS build files
+###
+/app/ndk
+/app/sdk
+/app/sdk-tools-linux.zip
+/app/sdk-tools-darwin.zip
+/app/android-ndk-r14b-darwin.zip
+/app/android-ndk-r14b-linux.zip
+
+# Ruby!
+###
 *.gem
 *.rbc
 /.config
