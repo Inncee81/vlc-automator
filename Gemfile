@@ -13,3 +13,5 @@ gem "appium_lib", "~> 9.15"
 gem "rubocop", "~> 0.58.2"
 
 gem "rake", "~> 12.3"
+
+gem "minitest", "~> 5.11"
