@@ -7,16 +7,19 @@ module TestEnvironment
   INSTALL_TIMEOUT = 90_000 # milliseconds
   LAUNCH_TIMEOUT = 12_000 # milliseconds
   KEY_DELAY = 100 # milliseconds
-  APP_NAME = 'VLC'
+  APP_NAME = 'VLC'.freeze
   APP_PATH = File.join(__dir__, '..', 'bin').freeze
-  LOG_DIR = File.join(__dir__, '..', 'log')
+  LOG_DIR = File.join(__dir__, '..', 'log').freeze
   Dir.mkdir(LOG_DIR) unless File.exist?(LOG_DIR)
-  ANDROID_ARM7 = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*-ARMv7\.apk')].first
-  ANDROID_ARM8 = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*-ARMv8\.apk')].first
-  ANDROID_X86 = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*-x86\.apk')].first
-  ANDROID_X86_64 = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*-x86_64\.apk')].first
-  IOS_NATIVE = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*\.ipa')].first
-  IOS_SIMULATOR = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*\.app')].first
+
+  # Native, simulator, and emulator binaries
+  # Regex is used so that any verion of the official build will be detected
+  ANDROID_ARM7 = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*-ARMv7\.apk')].first.freeze
+  ANDROID_ARM8 = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*-ARMv8\.apk')].first.freeze
+  ANDROID_X86 = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*-x86\.apk')].first.freeze
+  ANDROID_X86_64 = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*-x86_64\.apk')].first.freeze
+  IOS_NATIVE = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*\.ipa')].first.freeze
+  IOS_SIMULATOR = Dir[File.join(APP_PATH,'[a-zA-Z\-\.0-9]*\.app')].first.freeze
 
   # Custom exception for passing invalid config arguments
   class BadAppConfigError < StandardError
@@ -33,5 +36,4 @@ module TestEnvironment
       @message = message
     end
   end
-
 end
