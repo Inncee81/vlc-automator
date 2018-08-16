@@ -1,5 +1,4 @@
 * text=auto
-
 # source files
 *.rb           text eol=lf
 *.sh           text eol=lf
@@ -36,7 +35,6 @@
 *.lircrc       text eol=lf
 *.idl          text eol=lf
 *.gmo          text eol=lf
-
 # binary files
 *.exe  binary
 *.msi  binary
@@ -50,3 +48,5 @@
 *.tiff binary
 *.bmp  binary
 *.png  binary
+*.app filter=lfs diff=lfs merge=lfs -text
+bin/VLC[[:space:]]for[[:space:]]iOS.app/** filter=lfs diff=lfs merge=lfs -text
