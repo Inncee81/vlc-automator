@@ -1,4 +1,5 @@
 * text=auto
+
 # source files
 *.rb           text eol=lf
 *.sh           text eol=lf
@@ -35,6 +36,7 @@
 *.lircrc       text eol=lf
 *.idl          text eol=lf
 *.gmo          text eol=lf
+
 # binary files
 *.exe  binary
 *.msi  binary
@@ -42,6 +44,7 @@
 *.o    binary
 *.apk filter=lfs diff=lfs merge=lfs -text
 *.ipa filter=lfs diff=lfs merge=lfs -text
+*.tar filter=lfs diff=lfs merge=lfs -text
 *.lib  binary
 *.dmg  binary
 *.tiff binary
