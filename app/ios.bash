@@ -7,6 +7,6 @@ xcodebuild \
   -scheme VLC-iOS \
   -configuration Debug \
   -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=11.4' \
-  -derivedDataPath
+  -derivedDataPath \
   build
 popd

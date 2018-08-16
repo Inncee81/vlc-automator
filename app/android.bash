@@ -15,6 +15,7 @@ linux_install(){
   unzip sdk-tools-linux.zip -d sdk/
   unzip android-ndk-r14b-linux.zip -d ndk/
 
+  # Install required libraries
   sudo apt-get install automake ant autopoint cmake build-essential libtool \
     patch pkg-config protobuf-compiler ragel subversion unzip git \
     openjdk-8-jre openjdk-8-jdk flex
@@ -23,7 +24,7 @@ linux_install(){
   sudo apt-get install zlib1g:i386 libstdc++6:i386 libc6:i386
 }
 
-# macOS
+# macOS (This isn't enough to build it correctly yet)
 macos_install(){
   mkdir -p $ANDROID_SDK
   mkdir -p $ANDROID_NDK
@@ -34,6 +35,9 @@ macos_install(){
   
   unzip sdk-tools-darwin.zip -d sdk/
   unzip android-ndk-r14b-darwin.zip -d ndk/
+  
+  # This still doesn't work right
+  brew install automake ant cmake gpatch subversion zlib llvm
 }
 
 # Build both native and emulator versions
@@ -42,10 +46,10 @@ build(){
     # macOS!
     export JAVA_HOME='/Library/Java/Home/'
   else
-    # Linux!
+    # Linux! (Ubuntu)
     export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
   fi
-
+  
   pushd vlc-android
   ./compile.sh
   ./compile.sh -a x86
