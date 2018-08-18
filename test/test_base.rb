@@ -15,6 +15,7 @@ class TestBase < Minitest::Test
     @app = MobileApplication.new(Client::CAPABILITIES)
     @driver = LocalDriver.new(@app)
     @agent = @driver.instance
+    Appium.promote_appium_methods ::Minitest::Test, driver
   end
 
   def teardown
