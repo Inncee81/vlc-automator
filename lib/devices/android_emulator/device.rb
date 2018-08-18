@@ -6,7 +6,7 @@ class Device
       platformName: 'Android',
       platformVersion: '4.4',
       deviceName: 'Generic Android Device',
-      app: File.join(TestEnvironment::APP_PATH, TestEnvironment::ANDROID_APP),
+      app: File.join(TestEnvironment::APP_PATH, TestEnvironment::ANDROID_ARM8),
       browserName: '',
       newCommandTimeout: TestEnvironment::IMPLICIT_WAIT,
       language: 'en',

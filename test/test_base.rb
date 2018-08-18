@@ -14,13 +14,13 @@ class TestBase < Minitest::Test
   def setup
     @app = MobileApplication.new(Client::CAPABILITIES)
     @driver = LocalDriver.new(@app)
-    @browser = @driver.instance
+    @agent = @driver.instance
   end
 
   def teardown
     # Takes a screen shot if the 'result_code' of the test is not
     # equal to a passing value (in minitest's case, a '.' character)
     @driver.capture_state(@NAME) unless result_code.eql?('.')
-    !@browser.nil? ? @browser.quit : false
+    !@agent.nil? ? @agent.quit : false
   end
 end

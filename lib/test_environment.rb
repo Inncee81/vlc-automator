@@ -1,12 +1,14 @@
+# Module containing universal characteristics of the test environment 
+# that will be consistent for all test processes
 module TestEnvironment
-  RETRIES = 10
-  IMPLICIT_WAIT = 10 # seconds
-  DEVICE_TIMEOUT = 5 # seconds
-  BOOT_TIMEOUT = 60 # seconds
-  SCRSHOT_TIMEOUT = 3 # seconds
-  INSTALL_TIMEOUT = 90_000 # milliseconds
-  LAUNCH_TIMEOUT = 12_000 # milliseconds
-  KEY_DELAY = 100 # milliseconds
+  RETRIES = 10 # Amount of times to retry 
+  IMPLICIT_WAIT = 10 # seconds to wait for GUI elements to be present/usable
+  DEVICE_TIMEOUT = 5 # seconds to wait for the device to respond to requests
+  BOOT_TIMEOUT = 60 # seconds to wait for the device to boot
+  SCRSHOT_TIMEOUT = 3 # seconds to wait for the screenshot to capture
+  INSTALL_TIMEOUT = 90_000 # milliseconds to wait for app installation
+  LAUNCH_TIMEOUT = 12_000 # milliseconds to wait for app launch
+  KEY_DELAY = 100 # milliseconds between keypresses
   APP_NAME = 'VLC'.freeze
   APP_PATH = File.join(__dir__, '..', 'bin').freeze
   LOG_DIR = File.join(__dir__, '..', 'log').freeze
