@@ -8,11 +8,9 @@ class LocalDriver
   attr_reader :log_directory
   attr_accessor :instance
 
-  def initialize(app)
-    raise BadAppConfigError, 'Invalid web application configuration' \
-      unless web_app.is_a?(MobileApplication)
-    @app = app
-    @instance = Appium::Driver.new(@app.desired_caps, true).start_driver
+  def initialize(device)
+    @device = device
+    @instance = Appium::Driver.new(@device.desired_caps, true).start_driver
   end
 
   def capture_state(name); end
